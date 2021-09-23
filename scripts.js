@@ -29,13 +29,13 @@ document.addEventListener("DOMContentLoaded", async function () {
   // Código que será executado quando o navegador carregar
   const URL = "https://us-central1-squid-apis.cloudfunctions.net/test-front-basic";
   const apiData = await (await fetch(URL)).json();
-  const allImages = document.getElementById('all-images');
+  const allImages = document.getElementsByClassName('all-images');
   apiData.map((photo, index)=>{
     const createContainerDiv = document.createElement('div');
     const imageDiv = document.createElement('div');
     const hoverDiv = document.createElement('a');
     const infoDiv = document.createElement('div');
-    allImages.appendChild(createContainerDiv).classList.add('container');
+    allImages[0].appendChild(createContainerDiv).classList.add('container');
     const container = document.getElementsByClassName('container');
     container[index].appendChild(imageDiv).classList.add('instagram-photo');
     container[index].appendChild(hoverDiv).classList.add('overlay');
