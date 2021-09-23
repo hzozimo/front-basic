@@ -18,6 +18,17 @@ const commentsInPhoto = (photo, index) => {
   comments[index].innerText = `💬 ${commentsQuant}`;
 }
 
+const postDate = (photo, index) => {
+  const date = document.getElementsByClassName('date');
+  const datePost = photo.criadoEm;
+  const day = `${datePost[8]}${datePost[9]}`;
+  const month =`${datePost[5]}${datePost[6]}`;
+  const year =`${datePost[0]}${datePost[1]}${datePost[2]}${datePost[3]}`;
+  const hour = `${datePost[11]}${datePost[12]}`;
+  const minute = `${datePost[14]}${datePost[15]}`;
+  date[index].innerText = `📅${day}/${month}/${year} ${hour}:${minute}`;
+}
+
 const createLinkToInstagram = (photo, index) => {
   const hoverInfo = document.getElementsByClassName('overlay');
   hoverInfo[index].href = photo.link;
@@ -49,13 +60,17 @@ document.addEventListener("DOMContentLoaded", async function () {
     const createUserInfo = document.createElement('div');
     const createLikes = document.createElement('div');
     const createComments = document.createElement('div');
+    const createDate = document.createElement('div');
     info[index].appendChild(createUserInfo).classList.add('userInfo');
     info[index].appendChild(createLikes).classList.add('likes');
     info[index].appendChild(createComments).classList.add('comments');
+    info[index].appendChild(createDate).classList.add('date');
     usersInPhoto(photo, index);
     likesInPhoto(photo, index);
     commentsInPhoto(photo, index);
+    postDate(photo, index);
     createLinkToInstagram(photo, index);
+
     
     
     

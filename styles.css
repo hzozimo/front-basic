@@ -1,3 +1,77 @@
+@media only screen and (max-width: 768px) {
+  .all-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 768px;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin: auto;
+    flex-wrap: wrap;
+    width: 200px;
+    justify-content: space-between;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+  }
+
+  .image {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* display: block; */
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .overlay {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: black;
+  }
+  
+  .container:hover .overlay {
+    opacity: 0.5;
+  }
+  
+  .info {
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 769px) {
 body {
   background-image: url(./assets/background.svg);
   /* background: #fff; */
@@ -9,7 +83,8 @@ body {
   align-self: center;
   margin: auto;
   flex-wrap: wrap;
-  max-width: 1500px;
+
+  width: 400px;
   justify-content: space-between;
 }
 
@@ -17,7 +92,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 1500px;
+  max-width: 1000px;
   justify-content: space-between;
   margin: auto;
 }
@@ -27,9 +102,9 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 10px;
+  width: 150px;
+  height: 150px;
+  margin: 5px;
 }
 
 .image {
@@ -37,8 +112,8 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   /* display: block; */
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
 }
 
@@ -51,8 +126,8 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   opacity: 0;
   transition: .5s ease;
   background-color: black;
@@ -72,6 +147,8 @@ body {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
 }
 
 /* fade overlay referência: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_fade */
