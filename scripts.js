@@ -1,3 +1,10 @@
+const addPhoto = (photo, index) => {
+  const instagramPhoto = document.getElementsByClassName('instagram-photo');
+  const createImg = document.createElement('img');
+  createImg.src = photo.imagens.resolucaoPadrao.url;
+  instagramPhoto[index].appendChild(createImg).classList.add('image');
+}
+
 const usersInPhoto = (photo, index) => {
   const userInfo = document.getElementsByClassName('userInfo');
   const listedUsers = photo.metadados.users_in_photo;
@@ -50,10 +57,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const container = document.getElementsByClassName('container');
     container[index].appendChild(imageDiv).classList.add('instagram-photo');
     container[index].appendChild(hoverDiv).classList.add('overlay');
-    const instagramPhoto = document.getElementsByClassName('instagram-photo');
-    const createImg = document.createElement('img');
-    createImg.src = photo.imagens.resolucaoPadrao.url;
-    instagramPhoto[index].appendChild(createImg).classList.add('image');
+    addPhoto(photo, index);
     const hoverInfo = document.getElementsByClassName('overlay');
     hoverInfo[index].appendChild(infoDiv).classList.add('info');
     const info = document.getElementsByClassName('info');
@@ -69,10 +73,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     likesInPhoto(photo, index);
     commentsInPhoto(photo, index);
     postDate(photo, index);
-    createLinkToInstagram(photo, index);
-
-    
-    
-    
+    createLinkToInstagram(photo, index);    
   })
 });
